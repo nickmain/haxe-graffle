@@ -72,6 +72,13 @@ class PListLoader {
 
         text = ~/{\\fonttbl.*}/g.replace(text, ""); //font tables are a problem - just nuke them
 
+        // smart quotes and em-dashes
+        text = ~/\\'91/g.replace(text, "'");
+        text = ~/\\'92/g.replace(text, "'");
+        text = ~/\\'93/g.replace(text, "\"");
+        text = ~/\\'94/g.replace(text, "\"");
+        text = ~/\\'97/g.replace(text, "--");
+
         var s = "";
         var state = 1; //1=gathering text, 2=first backslash, 3=skip control-code, 4=skip whitespace
 
