@@ -11,6 +11,7 @@ class SheetTests extends TestCase {
 
         assertEquals(1, diagram.sheets.length);
         assertEquals("First Sheet", diagram.sheets[0].title);
+        assertTrue(diagram == diagram.sheets[0].diagram);
     }
 
     public function testMultipleSheets() {
@@ -19,5 +20,8 @@ class SheetTests extends TestCase {
         assertEquals(2, diagram.sheets.length);
         assertEquals("First Sheet", diagram.sheets[0].title);
         assertEquals("Second Sheet", diagram.sheets[1].title);
+
+        assertTrue(diagram == diagram.sheets[0].diagram);
+        assertTrue(diagram == diagram.sheets[1].diagram);
     }
 }

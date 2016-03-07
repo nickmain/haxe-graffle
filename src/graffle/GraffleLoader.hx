@@ -1,7 +1,10 @@
 package graffle;
 
+import graffle.model.GraffleGraphic;
+import graffle.model.GraffleTable;
+import graffle.model.GraffleShape;
+import graffle.model.GraffleGroup;
 import graffle.model.GraffleSheet;
-import plist.PList;
 import plist.PList;
 import plist.PListLoader;
 import graffle.model.GraffleDiagram;
@@ -50,7 +53,56 @@ class GraffleLoader {
         var sheet = new GraffleSheet();
         sheet.id = findInt(dict, ["UniqueID"]);
         sheet.title = findString(dict, ["SheetTitle"]);
+        sheet.diagram = diagram;
+
+        var graphics = findArray(dict, ["GraphicsList"]);
+        loadGraphics(graphics, sheet, null);
+
         diagram.sheets.push(sheet);
+    }
+
+    private function loadGraphics(graphics: Array<PListEntry>, sheet: GraffleSheet, group: GraffleGroup) {
+        for(g in graphics) switch(g) {
+            case PListDict(d): loadGraphic(d, sheet, group);
+            default: throw "wtf?";
+        }
+    }
+
+    private function loadGraphic(dict: PList, sheet: GraffleSheet, group: GraffleGroup) {
+        var type = findString(dict, ["Class"]);
+        if(type == null) type = "ShapedGraphic";
+
+        var g: GraffleGraphic = switch(type) {
+            case "ShapedGraphic": new GraffleShape();
+//            case "LineGraphic": new GraffleLine();
+//            case "Group": new GraffleGroup();
+//            case "TableGroup": new GraffleTable();
+            default: null;
+        }
+        if(g == null) return;  //just ignore unknown types
+
+        g.name = findString(dict, ["Name"]);
+        g.note = findString(dict, ["Notes"]);
+        g.id = findInt(dict, ["ID"]);
+        g.sheet = sheet;
+        g.group = group;
+
+        sheet.graphics.set(g.id, g);
+
+        if( group != null ) {
+            group.children.push(g);
+        }
+        else {
+            sheet.topGraphics.push(g); //top-level since it's not in a group
+        }
+
+        var props = findDict(dict, ["UserInfo"]);
+        if(props != null) for(key in props.keys()) switch(props[key]) {
+            case PListString(s): g.metadata.set(key, s);
+            default:
+        }
+
+        //TODO: sub-type loading
     }
 
     private function loadDiagramMetadata(dict: PList) {

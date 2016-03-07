@@ -5,6 +5,7 @@ class UnitTests {
         var r = new haxe.unit.TestRunner();
         r.add(new GraffleMetadataTests());
         r.add(new SheetTests());
+        r.add(new GraphicTests());
         r.run();
     }
 }
