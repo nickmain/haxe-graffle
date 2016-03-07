@@ -102,7 +102,33 @@ class GraffleLoader {
             default:
         }
 
+        switch(type) {
+            case "ShapedGraphic": loadShape(dict, cast g);
+//            case "LineGraphic": ...
+//            case "Group": ...
+//            case "TableGroup": ...
+            default:
+        }
+
         //TODO: sub-type loading
+    }
+
+    private function loadShape(dict: PList, shape: GraffleShape) {
+        shape.text = findString(dict, ["Text", "Text"]);
+        shape.dashed = findInt(dict, ["Style", "stroke", "Pattern"]) > 0;
+        shape.kind = findString(dict, ["Shape"]);
+        if(shape.kind == null) shape.kind = "Rectangle";
+
+        var bounds = findString(dict, ["Bounds"]);
+        if(bounds != null) {
+            bounds = ~/{/g.replace(bounds, "");
+            bounds = ~/}/g.replace(bounds, "");
+            var nums = bounds.split(",");
+            shape.x = Std.parseFloat(nums[0]);
+            shape.y = Std.parseFloat(nums[1]);
+            shape.width = Std.parseFloat(nums[2]);
+            shape.height = Std.parseFloat(nums[3]);
+        }
     }
 
     private function loadDiagramMetadata(dict: PList) {

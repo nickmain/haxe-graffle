@@ -6,6 +6,7 @@ class UnitTests {
         r.add(new GraffleMetadataTests());
         r.add(new SheetTests());
         r.add(new GraphicTests());
+        r.add(new ShapeTests());
         r.run();
     }
 }
