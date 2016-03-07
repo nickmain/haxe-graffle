@@ -163,7 +163,7 @@ World}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2016-03-07 03:46:41 +0000</string>
+	<string>2016-03-07 04:12:37 +0000</string>
 	<key>Modifier</key>
 	<string>Nick Main</string>
 	<key>NotesVisible</key>
@@ -226,7 +226,7 @@ World}</string>
 	<key>RowSpacing</key>
 	<real>36</real>
 	<key>SheetTitle</key>
-	<string>Canvas 1</string>
+	<string>First Sheet</string>
 	<key>SmartAlignmentGuidesActive</key>
 	<string>YES</string>
 	<key>SmartDistanceGuidesActive</key>
@@ -278,11 +278,13 @@ World}</string>
 		<key>CurrentSheet</key>
 		<integer>0</integer>
 		<key>Expanded_Canvases</key>
-		<array/>
+		<array>
+			<string>First Sheet</string>
+		</array>
 		<key>FitInWindow</key>
 		<true/>
 		<key>Frame</key>
-		<string>{{-1648, 209}, {1647, 1023}}</string>
+		<string>{{-1649, 209}, {1647, 1023}}</string>
 		<key>ShowInfo</key>
 		<true/>
 		<key>Sidebar</key>
@@ -298,7 +300,7 @@ World}</string>
 		<key>ZoomValues</key>
 		<array>
 			<array>
-				<string>Canvas 1</string>
+				<string>First Sheet</string>
 				<real>0.0</real>
 				<real>1</real>
 			</array>

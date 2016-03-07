@@ -15,8 +15,9 @@ class GraffleDiagram {
     public var copyright: Null<String>;
     public var description: Null<String>;
     public var subject: Null<String>;
-    public var version :Null<String>;
+    public var version: Null<String>;
 
-    public function new() {
-    }
+    public var sheets: Array<GraffleSheet> = [];
+
+    public function new() {}
 }
