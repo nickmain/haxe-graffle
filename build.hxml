@@ -1,0 +1,16 @@
+-neko build/test.n
+-cp src
+-main tests.UnitTests
+
+--next
+
+-python build/test.py
+-cp src
+-main tests.UnitTests
+
+#--next
+
+#-xml build/doc.xml
+#-cp src
+#-main graffle.GraffleLoader
+

@@ -1,0 +1,14 @@
+# Build and Release Folders
+bin/
+bin-debug/
+bin-release/
+build
+out
+pages
+
+# Other files and folders
+.settings/
+
+# Intellij cruft
+*.iml
+.idea
