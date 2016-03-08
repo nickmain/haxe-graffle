@@ -1,6 +1,7 @@
 package graffle;
 
 import graffle.model.GraffleLine.LineLabel;
+import graffle.model.GraffleGraphic.LinkAction;
 import graffle.model.GraffleGraphic;
 import graffle.model.GraffleLine;
 import graffle.model.GraffleShape;
@@ -111,6 +112,34 @@ class GraffleLoader {
         if(props != null) for(key in props.keys()) switch(props[key]) {
             case PListString(s): g.metadata.set(key, s);
             default:
+        }
+
+        var link = findDict(dict, ["Link"]);
+        if(link != null) {
+            var docJump = findDict(link, ["documentJump"]);
+            if(docJump != null) {
+                var sheetIndex = findInt(docJump, ["Worksheet"]);
+                var graphicIndex = findInt(docJump, ["Graphic"], -1);
+
+                if(graphicIndex >= 0) {
+                    g.link = JumpToGraphic(sheetIndex, graphicIndex);
+                }
+                else {
+                    g.link = JumpToSheet(sheetIndex);
+                }
+            }
+            else {
+                var filePath = findString(link,["fileReference","path"]);
+                if(filePath != null) {
+                    g.link = OpenFile(filePath);
+                }
+                else {
+                    var url = findString(link,["url"]);
+                    if(url != null) {
+                        g.link = OpenURL(url);
+                    }
+                }
+            }
         }
 
         switch(type) {

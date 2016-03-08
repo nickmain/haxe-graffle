@@ -28,7 +28,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2016-03-07 04:44:59 +0000</string>
+	<string>2016-03-08 17:51:06 +0000</string>
 	<key>Modifier</key>
 	<string>Nick Main</string>
 	<key>NotesVisible</key>
@@ -120,7 +120,76 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{378, 178.875}, {77.625, 45}}</string>
+					<string>{{292.5, 237.375}, {140.625, 19.125}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>b</key>
+							<string>1</string>
+							<key>g</key>
+							<string>1</string>
+							<key>r</key>
+							<string>1</string>
+						</dict>
+						<key>Size</key>
+						<real>12</real>
+					</dict>
+					<key>ID</key>
+					<integer>5</integer>
+					<key>Link</key>
+					<dict>
+						<key>documentJump</key>
+						<dict>
+							<key>Type</key>
+							<integer>6</integer>
+							<key>Worksheet</key>
+							<integer>1</integer>
+						</dict>
+					</dict>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>1</real>
+								<key>g</key>
+								<real>0.089913300000000002</real>
+								<key>r</key>
+								<real>0.0</real>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>CornerRadius</key>
+							<real>10</real>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
+
+\f0\fs24 \cf1 Link to Second Sheet}</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{241.875, 40.5}, {77.625, 45}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
@@ -158,7 +227,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{211.5, 103.5}, {77.625, 45}}</string>
+					<string>{{110.25, 40.5}, {77.625, 45}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
@@ -304,7 +373,297 @@ World}</string>
 			<key>DisplayScale</key>
 			<string>1 in = 1 in</string>
 			<key>GraphicsList</key>
-			<array/>
+			<array>
+				<dict>
+					<key>Bounds</key>
+					<string>{{308.25, 316.125}, {120.375, 19.125}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>b</key>
+							<string>1</string>
+							<key>g</key>
+							<string>1</string>
+							<key>r</key>
+							<string>1</string>
+						</dict>
+						<key>Size</key>
+						<real>12</real>
+					</dict>
+					<key>ID</key>
+					<integer>5</integer>
+					<key>Link</key>
+					<dict>
+						<key>fileReference</key>
+						<dict>
+							<key>alias</key>
+							<data>
+							AAAAAAGcAAIAAAxNYWNp
+							bnRvc2ggSEQAAAAAAAAA
+							AAAAAAAAAADSSEFxSCsA
+							AABetq4JUkVBRE1FLm1k
+							AAAAAAAAAAAAAAAAAAAA
+							AAAAAAAAAAAAAAAAAAAA
+							AAAAAAAAAAAAAAAAAAAA
+							AAAAAAAAAAAAAF6289L/
+							x+AAAAAAAAAAAP////8A
+							AAkgAAAAAAAAAAAAAAAA
+							AAAADGhheGUtZ3JhZmZs
+							ZQAQAAgAANJIo+EAAAAR
+							AAgAANMAOGAAAAABABQA
+							XrauAB8NqAAfDaQACWDg
+							AAYqmgACAEhNYWNpbnRv
+							c2ggSEQ6VXNlcnM6AG5p
+							Y2ttYWluOgBEZXZlbG9w
+							ZXI6AGdpdGh1YjoAaGF4
+							ZS1ncmFmZmxlOgBSRUFE
+							TUUubWQADgAUAAkAUgBF
+							AEEARABNAEUALgBtAGQA
+							DwAaAAwATQBhAGMAaQBu
+							AHQAbwBzAGgAIABIAEQA
+							EgA2VXNlcnMvbmlja21h
+							aW4vRGV2ZWxvcGVyL2dp
+							dGh1Yi9oYXhlLWdyYWZm
+							bGUvUkVBRE1FLm1kABMA
+							AS8A//8AAA==
+							</data>
+							<key>bookmark</key>
+							<data>
+							Ym9vaxADAAAAAAQQMAAA
+							AOjEePaFE1Ljmfpksg5c
+							PvKWhT8F9QIfWuiMPeV0
+							YTAeDAIAAAQAAAADAwAA
+							AAgAKAUAAAABAQAAVXNl
+							cnMAAAAIAAAAAQEAAG5p
+							Y2ttYWluCQAAAAEBAABE
+							ZXZlbG9wZXIAAAAGAAAA
+							AQEAAGdpdGh1YgAADAAA
+							AAEBAABoYXhlLWdyYWZm
+							bGUJAAAAAQEAAFJFQURN
+							RS5tZAAAABgAAAABBgAA
+							EAAAACAAAAAwAAAARAAA
+							AFQAAABoAAAACAAAAAQD
+							AACaKgYAAAAAAAgAAAAE
+							AwAA4GAJAAAAAAAIAAAA
+							BAMAAKQNHwAAAAAACAAA
+							AAQDAACoDR8AAAAAAAgA
+							AAAEAwAArrZeAAAAAAAI
+							AAAABAMAAPO2XgAAAAAA
+							GAAAAAEGAACcAAAArAAA
+							ALwAAADMAAAA3AAAAOwA
+							AAAIAAAAAAQAAEG8ir9g
+							AAAAGAAAAAECAAABAAAA
+							AAAAAA8AAAAAAAAAAAAA
+							AAAAAAAIAAAABAMAAAQA
+							AAAAAAAABAAAAAMDAAD1
+							AQAACAAAAAEJAABmaWxl
+							Oi8vLwwAAAABAQAATWFj
+							aW50b3NoIEhECAAAAAQD
+							AAAAAAAoOgAAAAgAAAAA
+							BAAAQbvTKuEAAAAkAAAA
+							AQEAAEE2MjQ5NkExLTM3
+							RUMtMzJCQS1BMjE2LTdE
+							QUUwOTE0N0FCQRgAAAAB
+							AgAAgQAAAAEAAADvEwAA
+							AQAAAAAAAAAAAAAAAQAA
+							AAEBAAAvAAAAAAAAAAEF
+							AADMAAAA/v///wEAAAAA
+							AAAAEAAAAAQQAAB8AAAA
+							AAAAAAUQAAD8AAAAAAAA
+							ABAQAAAsAQAAAAAAAEAQ
+							AAAcAQAAAAAAAAIgAAD4
+							AQAAAAAAAAUgAABoAQAA
+							AAAAABAgAAB4AQAAAAAA
+							ABEgAACsAQAAAAAAABIg
+							AACMAQAAAAAAABMgAACc
+							AQAAAAAAACAgAADYAQAA
+							AAAAADAgAAAEAgAAAAAA
+							AAHAAABMAQAAAAAAABHA
+							AAAgAAAAAAAAABLAAABc
+							AQAAAAAAABDQAAAEAAAA
+							AAAAAA==
+							</data>
+							<key>path</key>
+							<string>../../../README.md</string>
+						</dict>
+					</dict>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>0.10558634653141361</real>
+								<key>g</key>
+								<real>0.42234538612565442</real>
+								<key>r</key>
+								<real>0.0</real>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>CornerRadius</key>
+							<real>10</real>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
+
+\f0\fs24 \cf1 Link to File}</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{308.25, 277.875}, {120.375, 19.125}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>b</key>
+							<string>1</string>
+							<key>g</key>
+							<string>1</string>
+							<key>r</key>
+							<string>1</string>
+						</dict>
+						<key>Size</key>
+						<real>12</real>
+					</dict>
+					<key>ID</key>
+					<integer>4</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>http://www.cnn.com</string>
+					</dict>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>0.082215057859036378</real>
+								<key>g</key>
+								<real>0.0</real>
+								<key>r</key>
+								<real>0.5</real>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>CornerRadius</key>
+							<real>10</real>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
+
+\f0\fs24 \cf1 Link to Website}</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{308.25, 237.375}, {120.375, 19.125}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>b</key>
+							<string>1</string>
+							<key>g</key>
+							<string>1</string>
+							<key>r</key>
+							<string>1</string>
+						</dict>
+						<key>Size</key>
+						<real>12</real>
+					</dict>
+					<key>ID</key>
+					<integer>3</integer>
+					<key>Link</key>
+					<dict>
+						<key>documentJump</key>
+						<dict>
+							<key>Graphic</key>
+							<integer>1</integer>
+							<key>Type</key>
+							<integer>1</integer>
+							<key>Worksheet</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>1</real>
+								<key>g</key>
+								<real>0.089913264083117284</real>
+								<key>r</key>
+								<real>0.0</real>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>CornerRadius</key>
+							<real>10</real>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
+
+\f0\fs24 \cf2 Link to First World}</string>
+					</dict>
+				</dict>
+			</array>
 			<key>GridInfo</key>
 			<dict/>
 			<key>HPages</key>
@@ -407,8 +766,10 @@ World}</string>
 		<array>
 			<string>First Sheet</string>
 		</array>
+		<key>FitInWindow</key>
+		<true/>
 		<key>Frame</key>
-		<string>{{-1647, 209}, {1647, 1023}}</string>
+		<string>{{-1650, 209}, {1647, 1023}}</string>
 		<key>ShowInfo</key>
 		<true/>
 		<key>Sidebar</key>
@@ -418,9 +779,9 @@ World}</string>
 		<key>TopSlabHeight</key>
 		<real>363</real>
 		<key>VisibleRegion</key>
-		<string>{{-196, -186}, {1149, 926}}</string>
+		<string>{{0, -27.000000000000036}, {756.00000000000011, 609.27415143603139}}</string>
 		<key>Zoom</key>
-		<real>1</real>
+		<real>1.5198412698412698</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
@@ -430,7 +791,7 @@ World}</string>
 			</array>
 			<array>
 				<string>Second Sheet</string>
-				<real>1</real>
+				<real>0.0</real>
 				<real>1</real>
 			</array>
 		</array>

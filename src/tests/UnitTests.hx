@@ -9,8 +9,8 @@ class UnitTests {
         r.add(new ShapeTests());
         r.add(new LineTests());
         r.add(new GroupTests());
-        
-        //TODO: linking tests
+        r.add(new LinkTests());
+
         //TODO: overlap tests
         r.run();
     }
