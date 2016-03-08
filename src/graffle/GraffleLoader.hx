@@ -1,7 +1,8 @@
 package graffle;
 
+import graffle.model.GraffleLine.LineLabel;
 import graffle.model.GraffleGraphic;
-import graffle.model.GraffleTable;
+import graffle.model.GraffleLine;
 import graffle.model.GraffleShape;
 import graffle.model.GraffleGroup;
 import graffle.model.GraffleSheet;
@@ -18,6 +19,8 @@ class GraffleLoader {
     //TODO: handle compressed graffle files
 
     public var diagram = new GraffleDiagram();
+
+    private var labels: Array<LineLabel> = []; //for wiring up labels
 
     public function new() {}
 
@@ -57,6 +60,7 @@ class GraffleLoader {
 
         var graphics = findArray(dict, ["GraphicsList"]);
         loadGraphics(graphics, sheet, null);
+        wireUpLabels(sheet);
 
         diagram.sheets.push(sheet);
     }
@@ -68,15 +72,22 @@ class GraffleLoader {
         }
     }
 
+    private function wireUpLabels(sheet: GraffleSheet) {
+        for(label in labels) {
+            var line: GraffleLine = cast sheet.graphics.get(label.lineId);
+            line.labels.push(label);
+        }
+        labels = [];
+    }
+
     private function loadGraphic(dict: PList, sheet: GraffleSheet, group: GraffleGroup) {
         var type = findString(dict, ["Class"]);
         if(type == null) type = "ShapedGraphic";
 
         var g: GraffleGraphic = switch(type) {
             case "ShapedGraphic": new GraffleShape();
-//            case "LineGraphic": new GraffleLine();
-//            case "Group": new GraffleGroup();
-//            case "TableGroup": new GraffleTable();
+            case "LineGraphic": new GraffleLine();
+            case "Group" | "TableGroup": new GraffleGroup();
             default: null;
         }
         if(g == null) return;  //just ignore unknown types
@@ -104,13 +115,33 @@ class GraffleLoader {
 
         switch(type) {
             case "ShapedGraphic": loadShape(dict, cast g);
-//            case "LineGraphic": ...
-//            case "Group": ...
-//            case "TableGroup": ...
+            case "LineGraphic": loadLine(dict, cast g);
+            case "Group": loadGroup(dict, cast g, sheet);
+            case "TableGroup": {
+                var group: GraffleGroup = cast g;
+                loadGroup(dict, group, sheet);
+                group.isTable = true;
+            }
             default:
         }
+    }
 
-        //TODO: sub-type loading
+    private function loadGroup(dict: PList, group: GraffleGroup, sheet: GraffleSheet) {
+        var graphics = findArray(dict, ["Graphics"]);
+        loadGraphics(graphics, sheet, group);
+
+        var isSubgraph = findBool(dict, ["isSubgraph"]);
+        if(isSubgraph) {
+            group.background = cast group.children.pop();
+        }
+    }
+
+    private function loadLine(dict: PList, line: GraffleLine) {
+        line.dashed = findInt(dict, ["Style", "stroke", "Pattern"]) > 0;
+        line.headArrow = findString(dict, ["Style", "stroke", "HeadArrow"]);
+        line.tailArrow = findString(dict, ["Style", "stroke", "TailArrow"]);
+        line.headId = findInt(dict, ["Head", "ID"], -1);
+        line.tailId = findInt(dict, ["Tail", "ID"], -1);
     }
 
     private function loadShape(dict: PList, shape: GraffleShape) {
@@ -129,6 +160,38 @@ class GraffleLoader {
             shape.width = Std.parseFloat(nums[2]);
             shape.height = Std.parseFloat(nums[3]);
         }
+
+        var fill = findDict(dict, ["Style", "fill", "Color"]);
+        if(fill != null) {
+            shape.fill = {
+                r: findFloat(fill, ["r"], 0.0),
+                g: findFloat(fill, ["g"], 0.0),
+                b: findFloat(fill, ["b"], 0.0),
+                a: findFloat(fill, ["a"], 1.0)
+            };
+        }
+        else {
+            if(findString(dict, ["Style", "fill", "Draws"]) != "NO") {
+                // default fill
+                shape.fill = { r: 1.0, g: 1.0, b: 1.0, a: 1.0 };
+            }
+        }
+
+        var labelLine = findDict(dict, ["Line"]);
+        if(labelLine != null) {
+            var label = {
+                lineId: findInt(labelLine, ["ID"]),
+                shape: shape,
+                position: findFloat(labelLine, ["Position"])
+            };
+
+            shape.label = label;
+            labels.push(label);
+        }
+
+        // connector shapes
+        shape.headId = findInt(dict, ["Head", "ID"], -1);
+        shape.tailId = findInt(dict, ["Tail", "ID"], -1);
     }
 
     private function loadDiagramMetadata(dict: PList) {
@@ -180,12 +243,32 @@ class GraffleLoader {
     }
 
     // chase a list of keys down through nested dicts to find an int (default zero)
-    private function findInt(dict: PList, keys: Array<String>): Int {
+    private function findInt(dict: PList, keys: Array<String>, defaultValue: Int = 0): Int {
         var entry = chaseKeys(dict, keys);
-        if(entry == null) return 0;
+        if(entry == null) return defaultValue;
         return switch(entry) {
             case PListInteger(i): i;
-            default: 0;
+            default: defaultValue;
+        }
+    }
+
+    // chase a list of keys down through nested dicts to find a float (default zero)
+    private function findFloat(dict: PList, keys: Array<String>, defaultValue: Float = 0.0): Float {
+        var entry = chaseKeys(dict, keys);
+        if(entry == null) return defaultValue;
+        return switch(entry) {
+            case PListReal(f): f;
+            default: defaultValue;
+        }
+    }
+
+    // chase a list of keys down through nested dicts to find a float (default zero)
+    private function findBool(dict: PList, keys: Array<String>, defaultValue: Bool = false): Bool {
+        var entry = chaseKeys(dict, keys);
+        if(entry == null) return defaultValue;
+        return switch(entry) {
+            case PListBoolean(b): b;
+            default: defaultValue;
         }
     }
 

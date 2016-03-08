@@ -7,6 +7,11 @@ class UnitTests {
         r.add(new SheetTests());
         r.add(new GraphicTests());
         r.add(new ShapeTests());
+        r.add(new LineTests());
+        r.add(new GroupTests());
+        
+        //TODO: linking tests
+        //TODO: overlap tests
         r.run();
     }
 }
