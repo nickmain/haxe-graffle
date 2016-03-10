@@ -10,7 +10,9 @@ class UnitTests {
         r.add(new LineTests());
         r.add(new GroupTests());
         r.add(new LinkTests());
+        r.add(new MacroTests());
 
+        //TODO: images tests
         //TODO: overlap tests
         r.run();
     }
