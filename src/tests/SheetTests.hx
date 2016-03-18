@@ -7,7 +7,7 @@ import graffle.model.GraffleDiagram;
 class SheetTests extends TestCase {
 
     public function testSingleSheet() {
-        var diagram = GraffleLoader.diagramFromFile("src/tests/graffles/unit-tests.graffle");
+        var diagram = GraffleLoader.diagramFromFile(UnitTests.graffle1);
 
         assertEquals(1, diagram.sheets.length);
         assertEquals("First Sheet", diagram.sheets[0].title);
@@ -15,7 +15,7 @@ class SheetTests extends TestCase {
     }
 
     public function testMultipleSheets() {
-        var diagram = GraffleLoader.diagramFromFile("src/tests/graffles/unit-tests-2.graffle");
+        var diagram = GraffleLoader.diagramFromFile(UnitTests.graffle2);
 
         assertEquals(2, diagram.sheets.length);
         assertEquals("First Sheet", diagram.sheets[0].title);

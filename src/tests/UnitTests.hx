@@ -1,7 +1,15 @@
 package tests;
 
 class UnitTests {
+
+    public static var graffle1 = "src/tests/graffles/unit-tests.graffle";
+    public static var graffle2 = "src/tests/graffles/unit-tests-2.graffle";
+
     static function main() {
+        runTests();
+    }
+
+    public static function runTests() {
         var r = new haxe.unit.TestRunner();
         r.add(new GraffleMetadataTests());
         r.add(new SheetTests());
@@ -14,6 +22,8 @@ class UnitTests {
 
         //TODO: images tests
         //TODO: overlap tests
-        r.run();
+
+        try r.run()
+        catch(e: Dynamic) trace("Oops: " + e);
     }
 }

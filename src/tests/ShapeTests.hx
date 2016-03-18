@@ -11,7 +11,7 @@ class ShapeTests extends TestCase {
     var sheet: GraffleSheet;
 
     override function setup() {
-        diagram = GraffleLoader.diagramFromFile("src/tests/graffles/unit-tests.graffle");
+        diagram = GraffleLoader.diagramFromFile(UnitTests.graffle1);
         sheet = diagram.sheets[0];
     }
 

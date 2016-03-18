@@ -1,0 +1,19 @@
+-main tests.UnitTestsCPP
+-cp src
+
+-lib hxcpp
+
+--each
+
+-cpp build/cpplib
+
+
+# this is for Mac OS X:
+-D HXCPP_M64
+
+--next
+
+-cpp build/cpplib
+
+-D static_link
+#-D actuate

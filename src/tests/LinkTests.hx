@@ -12,7 +12,7 @@ class LinkTests extends TestCase {
     var sheet2: GraffleSheet;
 
     override function setup() {
-        diagram = GraffleLoader.diagramFromFile("src/tests/graffles/unit-tests-2.graffle");
+        diagram = GraffleLoader.diagramFromFile(UnitTests.graffle2);
         sheet1 = diagram.sheets[0];
         sheet2 = diagram.sheets[1];
     }

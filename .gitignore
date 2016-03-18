@@ -5,6 +5,7 @@ bin-release/
 build
 out
 pages
+*.log
 
 # Other files and folders
 .settings/

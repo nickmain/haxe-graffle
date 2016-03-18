@@ -10,14 +10,13 @@ import graffle.model.GraffleShape;
 
 class MacroTests extends TestCase {
 
-
     macro static function getSubject(e:Expr) {
-        var diagram = GraffleLoader.diagramFromFile("src/tests/graffles/unit-tests.graffle");
+        var diagram = GraffleLoader.diagramFromFile(UnitTests.graffle1);
         return macro $v{diagram.subject};
     }
 
     macro static function getExpr(e:Expr) {
-        var diagram = GraffleLoader.diagramFromFile("src/tests/graffles/unit-tests.graffle");
+        var diagram = GraffleLoader.diagramFromFile(UnitTests.graffle1);
         var code = cast(diagram.sheets[0].graphics[41], GraffleShape).text;
         return Context.parse(code, e.pos);
     }

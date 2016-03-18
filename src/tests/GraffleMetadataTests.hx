@@ -9,7 +9,7 @@ class GraffleMetadataTests extends TestCase {
     var diagram: GraffleDiagram;
 
     override function setup() {
-        diagram = GraffleLoader.diagramFromFile("src/tests/graffles/unit-tests.graffle");
+        diagram = GraffleLoader.diagramFromFile(UnitTests.graffle1);
     }
 
     public function testComments() {
